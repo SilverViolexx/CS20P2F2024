@@ -22,16 +22,21 @@ public class DigitsMastery {
 		
 		//Initialize and calculate number of dimes in the amount 
 		dimes = centAmt / 10;
-		centAmt -= dimes * 25;
+		centAmt -= dimes * 10;
 		
 		//Initialize and calculate number of nickels in the amount 
 		nickels = centAmt / 5;
-		centAmt -= nickels * 25;
+		centAmt -= nickels * 5;
 		
 		//Initialize and calculate number of pennies in the amount 
-		pennies = centAmt / 5;
+		pennies = centAmt / 1;
 		
-		
+		//Output amount of quarters, dimes, nickels and pennies
+		System.out.println("The minimum amount of coins is:"
+				+ "\nQuarters: " + quarters
+				+ "\nDimes: " + dimes
+				+ "\nNickels: " + nickels
+				+ "\nPennies: " + pennies);
 	}
 
 }
