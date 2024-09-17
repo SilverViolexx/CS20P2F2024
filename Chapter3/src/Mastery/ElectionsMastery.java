@@ -1,6 +1,6 @@
 /*
 
-Program: ProjectsMastery.java          Last Date of this Revision: September 16, 2024
+Program: Elections.java          Last Date of this Revision: September 16, 2024
 
 Purpose: Create a CollegeCalculator application that prompts the user for the amount of each expense and offset cost.
 
@@ -19,6 +19,9 @@ public class ElectionsMastery {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+	//Declaration area
+	Double rent, tution, books, food, clothing, transport, scholar, income ;
 		
 	//Preparing for user input
 	Scanner userInput = new Scanner(System.in);

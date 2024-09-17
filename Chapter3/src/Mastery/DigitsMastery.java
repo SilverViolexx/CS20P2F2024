@@ -1,3 +1,16 @@
+/*
+
+Program: DigitMastery.java          Last Date of this Revision: September 13, 2024
+
+Purpose: Modify the Digits application created in a review earlier in this chapter to show the hundreds-place 
+digit of a three digit number.
+
+Author: Amanda Ly
+School: CHHS
+Course: Computer Programming 20
+ 
+
+*/
 package Mastery;
 
 import java.util.Scanner;
@@ -6,37 +19,30 @@ public class DigitsMastery {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//Declare variables
-		int centAmt, quarters, dimes, nickels, pennies;
+		//Declaration area
+		int hundreds, tens, ones, userNum;
 		
 		//Preparing for user input
 		Scanner userInput = new Scanner(System.in);
 		
-		//Prompt user to input amount of money in cents
-		System.out.print("Please enter amount in cents: ");
-		centAmt = userInput.nextInt();
+		//Ask user to input a 2-digit number
+		System.out.print("Please enter a 3-digit number: ");
 		
-		//Initialize and calculate number of quarters in the amount 
-		quarters = centAmt / 25;
-		centAmt -= quarters * 25;
+		//Record user input
+		userNum = userInput.nextInt();
 		
-		//Initialize and calculate number of dimes in the amount 
-		dimes = centAmt / 10;
-		centAmt -= dimes * 10;
+		//Declare and initialize variables, then calculate tens and ones place
+		hundreds = userNum / 100 ;
+		userNum -= hundreds * 100;
+		tens = userNum / 10;
+		userNum -= tens * 10;
+		ones = userNum;
 		
-		//Initialize and calculate number of nickels in the amount 
-		nickels = centAmt / 5;
-		centAmt -= nickels * 5;
 		
-		//Initialize and calculate number of pennies in the amount 
-		pennies = centAmt / 1;
-		
-		//Output amount of quarters, dimes, nickels and pennies
-		System.out.println("The minimum amount of coins is:"
-				+ "\nQuarters: " + quarters
-				+ "\nDimes: " + dimes
-				+ "\nNickels: " + nickels
-				+ "\nPennies: " + pennies);
+		//Output the tens and ones place
+		System.out.print("The hundreds-place digit is:  " + hundreds 
+				+ "\nThe tens-place digit is:  " + tens 
+				+ "\nThe ones-place digit is:  " + ones);
 	}
 
 }
