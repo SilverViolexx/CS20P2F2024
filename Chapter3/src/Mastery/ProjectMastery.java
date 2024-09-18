@@ -50,7 +50,8 @@ public class ProjectMastery {
 	test = (test / timeAmt) * 100;
 	
 	//Display results to user
-	System.out.print("Time spent on each task:"
+	System.out.print("\n"
+			+ "Time spent on each task:"
 			+ "\nDesgining: " + df.format(design) + "%"
 			+ "\nCoding: " + df.format(code) + "%"
 			+ "\nDebugging: " + df.format(debug) + "%"

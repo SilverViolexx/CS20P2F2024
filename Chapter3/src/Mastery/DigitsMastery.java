@@ -25,13 +25,11 @@ public class DigitsMastery {
 		//Preparing for user input
 		Scanner userInput = new Scanner(System.in);
 		
-		//Ask user to input a 2-digit number
+		//Ask user to input a 2-digit number and record it
 		System.out.print("Please enter a 3-digit number: ");
-		
-		//Record user input
 		userNum = userInput.nextInt();
 		
-		//Declare and initialize variables, then calculate tens and ones place
+		//Initialize the variables and calculate the hundreds, tens and ones place
 		hundreds = userNum / 100 ;
 		userNum -= hundreds * 100;
 		tens = userNum / 10;

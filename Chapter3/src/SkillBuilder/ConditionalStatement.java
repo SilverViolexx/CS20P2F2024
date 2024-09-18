@@ -41,7 +41,7 @@ public class ConditionalStatement {
 	}
 	else
 	{
-		System.out.println("Incorrect, pelase try again.");
+		System.out.println("Incorrect, please try again.");
 	}
 	
 	
@@ -55,7 +55,7 @@ Paste the output of your code here
 
 Please guess the secret word: 
 hello
-Incorrect, pelase try again.
+Incorrect, please try again.
 
 Please guess the secret word: 
 CALGARY
