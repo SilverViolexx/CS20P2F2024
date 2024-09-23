@@ -1,6 +1,6 @@
 /*
 
-Program: ProjectMastery.java          Last Date of this Revision: September 15, 2024
+Program: ProjectMastery.java          Last Date of this Revision: September 20, 2024
 
 Purpose: Create a Hurricane application that displays the wind speed for the hurricane category entered 
 by the user. 
@@ -29,41 +29,36 @@ public class Hurricane {
 	System.out.print("Please enter the huricane category: ");
 	category = userInput.nextInt();
 	
+	//Check if input is equal to one of the categories
 	if (category == 1) {
 		System.out.print("Miles per hour: 74-95 mph"
 				+ "\nKnots: 64-82 kt"
 				+ "\nKilometers per hour: 119-153 km/hr");
 	}
 		
-	if (category == 2) {
+	else if (category == 2) {
 		System.out.print("Miles per hour: 96-110 mph"
 				+ "\nKnots: 83-95 kt"
 				+ "\nKilometers per hour: 154-177 km/hr");
 	}
 	
-	if (category == 3) {
+	else if (category == 3) {
 		System.out.print("Miles per hour: 111-130 mph"
 				+ "\nKnots: 96-113 kt"
 				+ "\nKilometers per hour: 178-209 km/hr");
 	}
 	
-	if (category == 4) {
+	else if (category == 4) {
 		System.out.print("Miles per hour: 131-155 mph"
 				+ "\nKnots: 114-135 kt"
 				+ "\nKilometers per hour: 210-249 km/hr");
 	}
 	
-	if (category == 5) {
+	else if (category == 5) {
 		System.out.print("Miles per hour: >155 mph"
 				+ "\nKnots: >135 kt"
 				+ "\nKilometers per hour: >249 km/hr");
 	}
-	
-	else {
-		System.out.print("Invalid category, please try again.");
-	}
-	
-	
 	
 	}
 
