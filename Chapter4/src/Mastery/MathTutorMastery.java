@@ -10,10 +10,10 @@ Author: Amanda Ly
 School: CHHS
 Course: Computer Programming 20
  
-
 */
 package Mastery;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,16 +22,18 @@ public class MathTutorMastery
 
 	public static void main(String[] args) 
 	{
-		// TODO Auto-generated method stub
 		//Declaration area
 		double userAns, mathAns,firstNum, secondNum;
 		int operator;
+		
+		//Shorten decimals to 3 decimal places
+		DecimalFormat df = new DecimalFormat("#0.000");
 		
 		//Preparing to import random number and for user input
 		Random r = new Random();
 		Scanner userInput = new Scanner(System.in);
 		
-		//Initialize random variables
+		//Initialize variables
 		mathAns = 0;
 		operator = r.nextInt(1,5);
 		firstNum = r.nextInt(1,11);
@@ -57,12 +59,13 @@ public class MathTutorMastery
 		//Prompt user to answer question
 		userAns = userInput.nextDouble();
 		
+        //Check if answer is correct, if not display correct answer
 		if (userAns == mathAns) {
 			System.out.print("Correct!");
 		}
 		
 		else {
-			System.out.print("Incorrect, the answer is " + mathAns);
+			System.out.print("Incorrect, the answer is " + df.format(mathAns));
 		}
 		
 		
