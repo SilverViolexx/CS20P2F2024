@@ -26,7 +26,7 @@ public class ProjectMastery {
 	double design, code, debug, test, timeAmt;
 	
 	//Preparing for user input
-		Scanner userInput = new Scanner(System.in);
+	Scanner userInput = new Scanner(System.in);
 	
 	//Prompt the user and initialize the variables
 	System.out.print("Enter the amount of minutes spent on each of the following project tasks: "
