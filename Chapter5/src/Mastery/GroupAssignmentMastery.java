@@ -7,9 +7,9 @@ public class GroupAssignmentMastery {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	//Declaration area
-	String firstN, lastN, firstL, lastL, group1, group2;
-	group1 = "abcdefghi";
-	group2 = "jklmnopqrs";
+	String firstN, lastN, group1, group2;
+	group1 = "j";
+	group2 = "t";
 		
 	//Preparing for user input and 
 	Scanner userInput = new Scanner(System.in);
@@ -21,20 +21,15 @@ public class GroupAssignmentMastery {
 	lastN = userInput.next();
 	
 	//Assign group number by last name
-	lastL = lastN.substring(1);
-	
-	if (lastL.compareToIgnoreCase(group1)) {
+	if (lastN.compareToIgnoreCase(group1) <= 0 ) {
 		System.out.print(firstN + " " + lastN + " is assigned to Group 1.");
 	}
-	else if (lastL.compareToIgnoreCase(group2)) {
+	else if (lastN.compareToIgnoreCase(group2) <= 0) {
 		System.out.print(firstN + " " + lastN + " is assigned to Group 2.");
 	}
 	else {
 		System.out.print(firstN + " " + lastN + " is assigned to Group 3.");
 	}
-		
-		
-		
 		
 	}
 
