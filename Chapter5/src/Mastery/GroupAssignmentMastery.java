@@ -1,3 +1,15 @@
+/*
+
+Program: GroupAssignment.java          Last Date of this Revision: October 7, 2024
+
+Purpose: Create a GroupAssignment application that prompts the user for his or her name and then displays a 
+group assignment. The group assignment depends on the first letter of the student’s last name.
+
+Author: Amanda Ly
+School: CHHS
+Course: Computer Programming 20
+
+*/
 package Mastery;
 
 import java.util.Scanner;
@@ -20,11 +32,11 @@ public class GroupAssignmentMastery {
 	System.out.print("Enter your last name: ");
 	lastN = userInput.next();
 	
-	//Assign group number by last name
-	if (lastN.compareToIgnoreCase(group1) <= 0 ) {
+	//Compare and assign group number by last name
+	if (lastN.compareToIgnoreCase(group1) < 0 ) {
 		System.out.print(firstN + " " + lastN + " is assigned to Group 1.");
 	}
-	else if (lastN.compareToIgnoreCase(group2) <= 0) {
+	else if (lastN.compareToIgnoreCase(group2) < 0) {
 		System.out.print(firstN + " " + lastN + " is assigned to Group 2.");
 	}
 	else {

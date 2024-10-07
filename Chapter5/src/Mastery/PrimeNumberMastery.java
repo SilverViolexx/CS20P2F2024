@@ -23,7 +23,7 @@ public class PrimeNumberMastery {
 	//Declaration area
 	int userNum, prime;
 	
-	//Preparing for user input and 
+	//Preparing for user input 
 	Scanner userInput = new Scanner(System.in);
 		
 	//Prompt user to input an integer and initialize variables
