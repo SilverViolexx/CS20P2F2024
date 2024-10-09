@@ -22,6 +22,7 @@ public class OddSum {
 	sum = 0;
 			
 	Scanner userInput = new Scanner(System.in);
+	System.out.print("Please enter a number: ");
 	userNum = userInput.nextInt();
 			
 	for (i = 1; i <= userNum; i+=1) {
