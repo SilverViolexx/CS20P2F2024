@@ -66,23 +66,23 @@ public class TimeConverter {
 		double userNum;
 		
 		Scanner userInput = new Scanner(System.in);
-		System.out.println("Please enter the initials for which converter you need:"
-				+ "\nHM - Hours to minutes"
-				+ "\nDH - Days to hours"
-				+ "\nMH - Minutes to hours"
-				+ "\nHD - Hours to days");
+		System.out.println("Please enter which converter you need:"
+				+ "\n1 - Hours to minutes"
+				+ "\n2 - Days to hours"
+				+ "\n3 - Minutes to hours"
+				+ "\n4 - Hours to days");
 		convert = userInput.next();
 		
-		if (convert.equalsIgnoreCase("hm")) {
+		if (convert.equalsIgnoreCase("1")) {
 			HM();
 		}
-		else if (convert.equalsIgnoreCase("dh")) {
+		else if (convert.equalsIgnoreCase("2")) {
 			DH();
 		}
-		else if (convert.equalsIgnoreCase("mh")) {
+		else if (convert.equalsIgnoreCase("3")) {
 			MH();
 		}
-		else if (convert.equalsIgnoreCase("hd")){
+		else if (convert.equalsIgnoreCase("4")){
 			HD();
 		}
 		else {
