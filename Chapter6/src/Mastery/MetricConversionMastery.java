@@ -1,6 +1,6 @@
 /*
 
-Program: QuadraticEquation.java          Last Date of this Revision: September 25, 2024
+Program: MetricConversion.java          Last Date of this Revision: October 11, 2024
 
 Purpose: Create a MetricConversion application that displays a menu of conversion choices and then prompts 
 the user to choose a conversion.
@@ -12,9 +12,10 @@ Course: Computer Programming 20
 */
 package Mastery;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class MetricConversion {
+public class MetricConversionMastery {
 
 	//Converts inches into centimeters
 	public static double InCm(double convert) {
@@ -71,8 +72,9 @@ public class MetricConversion {
 		double number, ans;
 
 		
-		//Prepare for user input 
+		//Prepare for user input and shorten answer to 2 decimal places
 		Scanner userInput = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("#0.00");
 		
 		//Display conversion options and prompt user to input an option and record it
 		System.out.print("Convert:"
@@ -85,28 +87,50 @@ public class MetricConversion {
 		option = userInput.nextInt();
 		
 		//Prompt user to input a number to convert
-		System.out.println("Enter a number: ");
+		System.out.print("Enter a number: ");
 		number = userInput.nextDouble();
 		
 		switch(option) {
-		case 1: System.out.println(number + " inches equals to " + InCm(number) + " centimeters.");
+		case 1: System.out.println(number + " inches equals to " + df.format(InCm(number)) + " centimeters.");
 			break;
-		case 2: System.out.println(number + " feet equals to " + FtCm(number) + " centimeters.");
+		case 2: System.out.println(number + " feet equals to " + df.format(FtCm(number)) + " centimeters.");
 			break;
-		case 3: System.out.println(number + " yards equals to " + YdM(number) + " meters.");
+		case 3: System.out.println(number + " yards equals to " + df.format(YdM(number)) + " meters.");
 			break;
-		case 4: System.out.println(number + " miles equals to " + MiKm(number) + " kilometers.");
+		case 4: System.out.println(number + " miles equals to " + df.format(MiKm(number)) + " kilometers.");
 			break;
-		case 5: System.out.println(number + " centimeters equals to " + CmIn(number) + " inches.");
+		case 5: System.out.println(number + " centimeters equals to " + df.format(CmIn(number)) + " inches.");
 			break;
-		case 6: System.out.println(number + " centimeters equals to " + CmFt(number) + " feet.");
+		case 6: System.out.println(number + " centimeters equals to " + df.format(CmFt(number)) + " feet.");
 			break;
-		case 7: System.out.println(number + " meters equals to " + MYd(number) + " yards.");
+		case 7: System.out.println(number + " meters equals to " + df.format(MYd(number)) + " yards.");
 			break;
-		case 8: System.out.println(number + " kilometers equals to " + KmMi(number) + " miles.");
+		case 8: System.out.println(number + " kilometers equals to " + df.format(KmMi(number)) + " miles.");
 			break;
 		default: System.out.println("Invalid conversion.");
 		}
 
 	}
 }
+
+/*
+Convert:
+1. Inches to Centimeters         5. Centimeters to Inches
+2. Feet to Centimeters           6. Centimeters to Feet
+3. Yard to Meters                7. Meters to Yards
+4. Miles to Kilometers           8. Kilometers to Miles
+
+Please enter your choice: 1
+Enter a number: 12
+12.0 inches equals to 30.48 centimeters.
+
+Convert:
+1. Inches to Centimeters         5. Centimeters to Inches
+2. Feet to Centimeters           6. Centimeters to Feet
+3. Yard to Meters                7. Meters to Yards
+4. Miles to Kilometers           8. Kilometers to Miles
+
+Please enter your choice: 7
+Enter a number: 2.5
+2.5 meters equals to 2.75 yards.
+*/
