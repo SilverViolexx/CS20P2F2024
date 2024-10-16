@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class AddCoinsMastery {
 
 	public static String getDollarAmount(int pennies, int nickels, int dimes, int quarters) {
-		
+		//Calculate price of each type of coin and total sum
 		double penniesAmt = pennies * 0.01;
 		double nickelsAmt = nickels * 0.05;
 		double dimesAmt = dimes * 0.1;
@@ -45,6 +45,7 @@ public class AddCoinsMastery {
 		System.out.print("Pennies: ");
 		pennies = userInput.nextInt();
 
+		//Display total sum to user
 		System.out.print("Total: " + getDollarAmount(pennies, nickels, dimes, quarters));
 	}
 
