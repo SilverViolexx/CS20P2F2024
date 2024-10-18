@@ -90,6 +90,7 @@ public class MetricConversionMastery {
 		System.out.print("Enter a number: ");
 		number = userInput.nextDouble();
 		
+		//Display answer to user based on option picked
 		switch(option) {
 		case 1: System.out.println(number + " inches equals to " + df.format(InCm(number)) + " centimeters.");
 			break;
