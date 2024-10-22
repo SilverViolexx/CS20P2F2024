@@ -1,16 +1,21 @@
 package SkillBuilder;
 
-public class CirclesPart1{
+public class CirclesPart2{
 	private double radius;
 	private static double PI = 3.14;
 	
 	//Constructor method
-	public CirclesPart1() {
+	public CirclesPart2() {
 		radius = 1.5; //Default radius
 		
 	}
+	
+	//Overloading the constructor method
+	public CirclesPart2(double r) {
+		radius = r;
+	}
 
-	//Accessor Method
+	//Access method
 	public double getRadius(){
 		return radius;
 	}
