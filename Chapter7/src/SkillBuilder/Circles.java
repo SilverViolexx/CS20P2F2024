@@ -1,17 +1,17 @@
 package SkillBuilder;
 
-public class CirclesPart4{
+public class Circles{
 	private double radius;
 	private static double PI = 3.14;
 	
 	//Constructor method
-	public CirclesPart4() {
+	public Circles() {
 		radius = 1.5; //Default radius
 		
 	}
 	
 	//Overloading the constructor method
-	public CirclesPart4(double r) {
+	public Circles(double r) {
 		radius = r;
 	}
 
@@ -32,11 +32,11 @@ public class CirclesPart4{
 	
 	//Area formula
 	public static void displayAreaFormula() {
-		System.out.println("The formula for the area of a circle is a = PI * r * r.");
+		System.out.println("The formula for the area of a circle is a = PI * radius * radius.");
 	}
 	
-	public boolean equals(CirclesPart4 spot) {
-		CirclesPart4 same = (CirclesPart4) spot;
+	public boolean sameRadius(Object spot) {
+		Circles same = (Circles) spot;
 				
 		if (same.getRadius() == radius) {
 			return true;
@@ -44,6 +44,13 @@ public class CirclesPart4{
 		else {
 			return false;
 		}
+	}
+	
+	public String toString() {
+		String circleString;
+		
+		circleString = "The first circle has a radius of " + radius + ".";
+		return (circleString);
 	}
 	
 }

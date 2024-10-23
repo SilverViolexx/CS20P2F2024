@@ -1,16 +1,16 @@
 package SkillBuilder;
 
-public class RectanglePart1 {
+public class Rectangle {
 	private double length, width;
 	
 	//Constructor method
-	public RectanglePart1() {
+	public Rectangle() {
 		length = 2; //Default length
 		width = 4; //Default width
 	}
 	
 	//Overloading constructor method
-	public RectanglePart1(double l, double w) {
+	public Rectangle(double l, double w) {
 		length = l;
 		width = w;
 	}
@@ -40,4 +40,8 @@ public class RectanglePart1 {
 		return ((2 * getLength()) + (2 * getWidth()));
 		}
 
+	//Area formula
+	public static void displayAreaFormula() {
+		System.out.println("The formula for the area of a rectangle is a = (2 * l) + (2 * w).");
+	}
 }
