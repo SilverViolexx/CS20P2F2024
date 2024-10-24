@@ -35,6 +35,7 @@ public class Circles{
 		System.out.println("The formula for the area of a circle is a = PI * radius * radius.");
 	}
 	
+	//Compares if 2 circles are equal
 	public boolean sameRadius(Object spot) {
 		Circles same = (Circles) spot;
 				
@@ -46,10 +47,11 @@ public class Circles{
 		}
 	}
 	
+	//Returns a string that represents the circle
 	public String toString() {
 		String circleString;
 		
-		circleString = "The first circle has a radius of " + radius + ".";
+		circleString = "The second circle has a radius of " + radius + ".";
 		return (circleString);
 	}
 	

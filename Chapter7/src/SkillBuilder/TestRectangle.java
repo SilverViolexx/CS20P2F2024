@@ -10,10 +10,21 @@ public class TestRectangle {
 		
 		Rectangle rect = new Rectangle();
 		rect.setLW(5.2,7);
+		Rectangle rect2 = new Rectangle(3,6);
 		
 		System.out.println("Rectangle perimeter: " + rect.perimeter());
 		System.out.println("Rectangle area: " + rect.area());
 		Rectangle.displayAreaFormula();
+		
+		if (rect.equals(rect2)) {
+			System.out.println("The circles are equal.");
+		}
+		else {
+			System.out.println("The circles are not equal.");
+		}
+		
+		
+		System.out.println(rect2.toString());
 	}
 
 }

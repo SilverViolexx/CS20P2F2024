@@ -42,6 +42,26 @@ public class Rectangle {
 
 	//Area formula
 	public static void displayAreaFormula() {
-		System.out.println("The formula for the area of a rectangle is a = (2 * l) + (2 * w).");
+		System.out.println("The formula for the area of a rectangle is a = (2 * length) + (2 * width).");
 	}
+	
+	//Compares if 2 rectangles are equal
+	public boolean sameRectangle(Object rect) {
+		Rectangle same = (Rectangle) rect;
+		
+		if (same.getLength() == ((Rectangle) rect).getLength() & same.getWidth() == ((Rectangle) rect).getWidth()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	//Returns a string that represents the circle
+		public String toString() {
+			String retangleString;
+			
+			retangleString = "The second circle has a length of " + getLength() + " and a width of " + getWidth() + ".";
+			return (retangleString);
+		}
 }

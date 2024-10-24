@@ -23,7 +23,7 @@ public class TestCircle {
 		}
 		
 		
-		System.out.println(spot.toString());
+		System.out.println(spot2.toString());
 		
 	}
 	
