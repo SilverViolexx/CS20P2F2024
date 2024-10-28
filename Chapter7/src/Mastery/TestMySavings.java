@@ -8,11 +8,12 @@ public class TestMySavings {
 		// TODO Auto-generated method stub
 		//Declaration area
 		int option;
+		double withdraw;
 		
 		//Prepare for user input
 		Scanner userInput = new Scanner(System.in);
 		
-		MySavings amount = new MySavings(0, 0, 0, 0);
+		MySavings amount = new MySavings(0);
 		
 		//Display conversion options and prompt user to input an option and record it
 		System.out.print("Convert:"
@@ -26,25 +27,37 @@ public class TestMySavings {
 			+ "\nPlease enter your choice: ");
 		option = userInput.nextInt();
 		
-		switch(option) {
-		case 0:
-			break;
-		case 1: 
-			showTotal();
-			break;
-		case 2:
-			break;
-		case 3: 
-			break;
-		case 4:
-			break;
-		case 5: 
-			break;
-		case 6:
-			break;
-		default: System.out.println("Invalid option.");
-		}
+		while (option >= 0) {
+					
+			switch(option) {
+			case 0:
+				break;
+			case 1: System.out.println(amount.showTotal());
+				break;
+			case 2: amount.addPennies();
+				System.out.println("You have added 1 penny.");
+				break;
+			case 3: amount.addNickels();
+				System.out.println("You have added 1 nickel.");
+				break;
+			case 4: amount.addDimes();
+				System.out.println("You have added 1 dime.");
+				break;
+			case 5: amount.addQuarters();
+				System.out.println("You have added 1 quarter.");
+				break;
+			case 6: System.out.print("How much money would you like to withdraw?"
+					+ "\n$");
+				withdraw = userInput.nextDouble();
+				System.out.println(amount.takeMoney(withdraw));
+				break;
+			default: System.out.println("Invalid option.");
+			}
+		
+		System.out.print("Please enter your choice: ");
+		option = userInput.nextInt();
 			//
+		}
 		
 	}
 

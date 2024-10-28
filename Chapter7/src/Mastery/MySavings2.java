@@ -1,15 +1,15 @@
 package Mastery;
 
-public class MySavings {
+public class MySavings2 {
 	private double total;
 	
 	//Constructor method with default values
-	public MySavings() {
+	public MySavings2() {
 		total = 0;
 	}
 	
 	//Overloading constructor method
-	public MySavings(double t) {
+	public MySavings2(double t) {
 		total = t;
 	}
 	
@@ -25,13 +25,13 @@ public class MySavings {
 	
 	//Show total
 	public String showTotal() {
-		return ("Your total balance is: $" + total);
+		total = getTotal();
+		return ("Total: $" + total);
 	}
 	
 	//Add pennies
 	public void addPennies() {
 		double total =+ 0.01;
-		
 	}
 	
 	//Add nickels
