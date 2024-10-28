@@ -1,0 +1,29 @@
+2. Method declaration includes the method name, access level, return type and parameters if there are any without defining what actions to perform, while the method body is where the blocks of code are written for that method to be called upon.
+
+3. Access modifiers are used to change the access level of a method, like public.
+
+4. Another word for describing access level is visibility, as the access level will determine whether another method can call on it.
+
+5. var1 and var2(in for loop) are declared in the main method meaning it is only accessible in that method. var3 and var4(in for loop) are declared in the method named method1() meaning it is only accessible in that method.
+
+6a. public static int getVowels(String input) { 
+}
+
+b. public static int extractDigit(int input) {
+}
+
+c. public static String insertString(String input, int number) {
+}
+
+7a. Method declaration can be used to distinguish one method from another by having different method names and/or parameter types or orders.
+
+b.  Two methods in the same class can have the same name. This is called method overloading, where the methods have different parameters types or have it in a different order while having the same name.
+
+8a. The return statement is used to send a value from the method it is being returned to the method where it is being called. 
+
+b. The return statement can only send 1 value to the calling statement.
+
+c. When a method returns a specified value type stated in the method declaration, it must return a value of that specific type(ie. String, int, boolean) in the body. Since the return statement can only return 1 value, once a value is returned, it will not run the rest of the code in that method. On the other hand, a method that doesn’t return a specified value will use the keyword void in the method declaration and doesn’t require a return statement. 
+
+9. The method doSomething() returns an integer which is 5, so when it is called in the main method, it needs to be initialized as a variable as the value needs to be stored somewhere in order to be able to use it. In order to fix the error, doSomething() just needs to be initialized(ie. int add = doSomething();).
+
