@@ -30,7 +30,7 @@ public class TestMySavings {
 		case 0:
 			break;
 		case 1: 
-			
+			showTotal();
 			break;
 		case 2:
 			break;

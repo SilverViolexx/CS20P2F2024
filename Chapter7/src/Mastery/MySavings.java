@@ -58,6 +58,12 @@ public class MySavings {
 		total = t;
 	}
 	
+	//Show total
+	public String showTotal() {
+		total = getTotal();
+		System.out.print("Total: $" + total);
+	}
+	
 	//Add pennies
 	public void addPennies(int penny) {
 		double addPenny = penny * 0.01;
