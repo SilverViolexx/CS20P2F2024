@@ -57,7 +57,7 @@ public class MySavings {
 	//Subtract money
 	public String takeMoney(double newTotal) {
 		total -= newTotal;
-		return("Your new balance is: $" + total);
+		return("Your new balance is: $" + df.format(total));
 	}
 
 		
