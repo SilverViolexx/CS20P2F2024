@@ -1,7 +1,11 @@
 package Mastery;
 
+import java.text.DecimalFormat;
+
 public class MySavings {
 	private double total;
+	
+	DecimalFormat df = new DecimalFormat("#0.00");
 	
 	//Constructor method with default values
 	public MySavings() {
@@ -20,43 +24,42 @@ public class MySavings {
 	
 	//Modifier method
 	public void setTotal(double t) {
-		total = t;
-	}
-	
-	//Show total
-	public String showTotal() {
-		return ("Your total balance is: $" + total);
+		total += t;
 	}
 	
 	//Add pennies
 	public void addPennies() {
-		double total =+ 0.01;
+		total = total + 0.01;
 		
 	}
 	
 	//Add nickels
 	public void addNickels() {
-		double total = 0.05;
+		total = total + 0.05;
+		
 	}
 	
 	//Add dimes
 	public void addDimes() {
-		double total =+ 0.1;
+		total = total + 0.1;
 	}
 	
 	//Add quarters
 	public void addQuarters() {
-		double total =+ 0.25;
+		total = total + 0.25;
+	}
+	
+	//Show total
+	public String showTotal() {
+		return ("Your total balance is: $" + df.format(getTotal()));
 	}
 	
 	//Subtract money
 	public String takeMoney(double newTotal) {
-		total =- newTotal;
+		total -= newTotal;
 		return("Your new balance is: $" + total);
 	}
 
-	//Take out money
-	//public double totalAfter(double takeOut) {
 		
 	
 }

@@ -13,7 +13,8 @@ public class TestMySavings {
 		//Prepare for user input
 		Scanner userInput = new Scanner(System.in);
 		
-		MySavings amount = new MySavings(0);
+		MySavings amount = new MySavings();
+		amount.setTotal(0);
 		
 		//Display conversion options and prompt user to input an option and record it
 		System.out.print("Convert:"
@@ -28,7 +29,9 @@ public class TestMySavings {
 		option = userInput.nextInt();
 		
 		while (option >= 0) {
-					
+			
+			
+			
 			switch(option) {
 			case 0:
 				break;
@@ -56,6 +59,10 @@ public class TestMySavings {
 		
 		System.out.print("Please enter your choice: ");
 		option = userInput.nextInt();
+		if (option <= 0) {
+			break;
+		
+		}
 			//
 		}
 		
