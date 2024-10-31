@@ -70,3 +70,43 @@ public class TestMySavings {
 	}
 
 }
+
+/*
+Convert:
+1. Show total money in bank.
+2. Add a penny.
+3. Add a nickel.
+4. Add a dime.
+5. Add a quarter.
+6. Take out money from the bank.
+Enter 0 to quit.
+Please enter your choice: 5
+You have added 1 quarter.
+Please enter your choice: 4
+You have added 1 dime.
+Please enter your choice: 1
+Your total balance is: $0.35
+Please enter your choice: 6
+How much money would you like to withdraw?
+$0.05
+Your new balance is: $0.30
+Please enter your choice: 0
+
+Convert:
+1. Show total money in bank.
+2. Add a penny.
+3. Add a nickel.
+4. Add a dime.
+5. Add a quarter.
+6. Take out money from the bank.
+Enter 0 to quit.
+Please enter your choice: 1
+Your total balance is: $0.00
+Please enter your choice: 2
+You have added 1 penny.
+Please enter your choice: 6
+How much money would you like to withdraw?
+$0
+Your new balance is: $0.01
+Please enter your choice: 0
+*/

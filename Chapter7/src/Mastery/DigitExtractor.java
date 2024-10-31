@@ -3,34 +3,42 @@ package Mastery;
 import java.text.DecimalFormat;
 
 public class DigitExtractor {
-	private int wholeNum, hundred, ten, one;
-	
-	DecimalFormat df = new DecimalFormat("#0");
+	private int hundred, ten, one;
 	
 	//Constructor method with default values
 	public DigitExtractor() {
-		wholeNum = 0;
 		hundred = 0;
 		ten = 0;
 		one = 0;
 	}
 	
 	//Overloading constructor method
-	public DigitExtractor(int w, int h, int t, int o) {
-		wholeNum = w;
+	public DigitExtractor(int h, int t, int o) {
 		hundred = h;
 		ten = t;
 		one = o;
 	}
 	
 	//Access method
-	public int getNum() {
-		return wholeNum;
+	public int getHundred() {
+		return hundred;
+	}
+	public int getTen() {
+		return ten;
+	}
+	public int getOne() {
+		return one;
 	}
 	
 	//Modifier method
-	public void setNum(int w) {
-		wholeNum = w;
+	public void setHundred(int h) {
+		hundred = h;
+	}
+	public void setTen(int t) {
+		ten = t;
+	}
+	public void setOne(int o) {
+		one = o;
 	}
 	
 	//Show whole number
@@ -46,17 +54,16 @@ public class DigitExtractor {
 		
 	//Find tens place
 	public String getTens(int userNum) {
-		ten = (userNum - (hundred * 100));
-		int tens = userNum;
-		int ten1 = hundred;
-		int ten2 = hundred * 100;
-		return ("The tens place digit is " + ten +"         " + tens +"         " + ten1 +"         " + ten2 +"         " + ".");
+		hundred = userNum / 100;
+		ten = (userNum - (hundred * 100)) / 10;
+		return ("The tens place digit is " + ten + ".");
 	}
 		
 	//Find tens place
 	public String getOnes(int userNum) {
-		int newTotal = userNum - (hundred * 100);
-		one = newTotal - (ten * 10);
+		hundred = userNum / 100;
+		ten = (userNum - (hundred * 100)) / 10;
+		one = userNum - ((hundred * 100) + (ten * 10));
 		return ("The ones place digit is " + one + ".");
 	}
 }

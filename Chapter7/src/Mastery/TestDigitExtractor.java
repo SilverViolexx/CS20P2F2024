@@ -15,7 +15,7 @@ public class TestDigitExtractor {
 		Scanner userInput = new Scanner(System.in);
 				
 		//Create new object
-		DigitExtractor Num = new DigitExtractor(0, 0, 0, 0);
+		DigitExtractor Num = new DigitExtractor(0, 0, 0);
 		
 		//Prompt user to input an integer an initialize it
 		System.out.print("Enter an integer: ");
@@ -29,10 +29,10 @@ public class TestDigitExtractor {
 			+ "\n(Q)uit."
 			+ "\nEnter your choice: ");
 		option = userInput.next();
-		quit = option.equalsIgnoreCase("q");
 		
-		while (quit = true) {
-			
+		//Continue loops until break condition
+		while (true) {
+			//Display answer to user based on option picked
 			if (option.equalsIgnoreCase("w")) {
 				System.out.println(Num.showNum(userNum));
 			}
@@ -45,15 +45,55 @@ public class TestDigitExtractor {
 			else if (option.equalsIgnoreCase("h")) {
 				System.out.println(Num.getHundreds(userNum));
 			}
+			else if (option.equalsIgnoreCase("q")) {
+				break;
+			}
 			else {
 				System.out.println("Invaild option");
 			}
 			
+			//Prompt user to input option
 			System.out.print("Enter your choice: ");
 			option = userInput.next();
 			
-			quit = option.equalsIgnoreCase("q");
 		}
 	}
 
 }
+
+/*
+Enter an integer: 723
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undereds place number.
+(Q)uit.
+Enter your choice: w
+The whole number is 723.
+Enter your choice: o
+The ones place digit is 3.
+Enter your choice: t
+The tens place digit is 2.
+Enter your choice: h
+The hundreds place digit is 7.
+Enter your choice: q
+
+Enter an integer: 637
+Show (W)hole number.
+Show (O)nes place number.
+Show (T)ens place number.
+Show (H)undereds place number.
+(Q)uit.
+Enter your choice: h
+The hundreds place digit is 6.
+Enter your choice: e
+Invaild option
+Enter your choice: o
+The ones place digit is 7.
+Enter your choice: t
+The tens place digit is 3.
+Enter your choice: w
+The whole number is 637.
+Enter your choice: q
+
+*/
