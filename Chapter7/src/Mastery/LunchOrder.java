@@ -1,7 +1,11 @@
 package Mastery;
 
+import java.text.DecimalFormat;
+
 public class LunchOrder {
-	private double prices, fats, carbs, fibers;
+	private double prices, fats, carbs, fibers, total;
+	//Shortens number to 2 decimal places
+	DecimalFormat df = new DecimalFormat("#0.00");
 	
 	//Constructor method with default values
 	public LunchOrder() {
@@ -9,6 +13,7 @@ public class LunchOrder {
 		fats = 0;
 		carbs = 0;
 		fibers = 0;
+		total = 0;
 	}
 	
 	//Overloading constructor method
@@ -17,6 +22,9 @@ public class LunchOrder {
 		fats = fat2;
 		carbs = carb2;
 		fibers = fiber2;
+	}
+	public LunchOrder(double totalAmt) {
+		total = totalAmt;
 	}
 	
 	//Access method
@@ -32,6 +40,9 @@ public class LunchOrder {
 	public double getFiber() {
 		return fibers;
 	}
+	public double getTotal() {
+		return total;
+	}
 	
 	//Modifier method
 	public void setPrice(double price2) {
@@ -46,16 +57,19 @@ public class LunchOrder {
 	public void setFiber(double fiber2) {
 		fibers = fiber2;
 	}
+	public void setTotal(double totalAmt) {
+		total = totalAmt;
+	}
 	
 	//Return display info for menu items
 	public String burgers() {
-		return ("Each hanburger has " + fats + "g of fat, " + carbs + "g of carbs, and " + fibers + "g of fiber.");
+		return ("Each hamburger has " + fats + "g of fat, " + carbs + "g of carbs, and " + fibers + "g of fiber.");
 	}
 	public String salads() {
 		return ("Each salad has " + fats + "g of fat, " + carbs + "g of carbs, and " + fibers + "g of fiber.");
 	}
 	public String fries() {
-		return ("Frensh fires have " + fats + "g of fat, " + carbs + "g of carbs, and " + fibers + "g of fiber.");
+		return ("French fries have " + fats + "g of fat, " + carbs + "g of carbs, and " + fibers + "g of fiber.");
 	}
 	public String sodas() {
 		return ("Each soda has " + fats + "g of fat, " + carbs + "g of carbs, and " + fibers + "g of fiber.");
@@ -63,28 +77,26 @@ public class LunchOrder {
 	
 	//Calculate burger price
 	public void burgerCost(int burgerAmt, double price) {
-		double cost = burgerAmt * price;
+		total += (burgerAmt * price);
 	}
 	
 	//Calculate salad price
-	public double saladCost(int saladAmt, double price) {
-		double cost = saladAmt * price;
-		return cost;
+	public void saladCost(int saladAmt, double price) {
+		total += (saladAmt * price);
 	}
 	
 	//Calculate salad price
-	public double fryCost(int fryAmt, double price) {
-		double cost = fryAmt * price;
-		return cost;
+	public void fryCost(int fryAmt, double price) {
+		total += (fryAmt * price);
 	}
 	
 	//Calculate salad price
 	public void sodaCost(int sodaAmt, double price) {
-		double cost = sodaAmt * price;
+		total += (sodaAmt * price);
 	}
 	
-	//Calculate total price
+	//Display total price
 	public String total() {
-		double totalCost = saladCost();
+		return "Your order comes to: $" + df.format(total);
 	}
 }

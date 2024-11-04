@@ -49,7 +49,7 @@ public class TestDigitExtractor {
 				break;
 			}
 			else {
-				System.out.println("Invaild option");
+				System.out.println("Invalid option");
 			}
 			
 			//Prompt user to input option
@@ -87,7 +87,7 @@ Show (H)undereds place number.
 Enter your choice: h
 The hundreds place digit is 6.
 Enter your choice: e
-Invaild option
+Invalid option
 Enter your choice: o
 The ones place digit is 7.
 Enter your choice: t
