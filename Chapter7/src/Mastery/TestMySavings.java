@@ -1,3 +1,16 @@
+/*
+
+Program: AddCoinsMastery.java          Last Date of this Revision: October 29, 2024
+
+Purpose: Create a MySavings application that displays a menu of choices for entering pennies, nickels, dimes, and 
+quarters into a piggy bank and then prompts the user to make a selection
+
+Author: Amanda Ly
+School: CHHS
+Course: Computer Programming 20
+ 
+*/
+
 package Mastery;
 
 import java.util.Scanner;
@@ -17,9 +30,8 @@ public class TestMySavings {
 		MySavings amount = new MySavings();
 		amount.setTotal(0);
 		
-		//Display conversion options and prompt user to input an option and record it
-		System.out.print("Convert:"
-			+ "\n1. Show total money in bank."
+		//Display options and prompt user to input an option and record it
+		System.out.print("1. Show total money in bank."
 			+ "\n2. Add a penny."
 			+ "\n3. Add a nickel."
 			+ "\n4. Add a dime."

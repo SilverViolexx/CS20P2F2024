@@ -1,3 +1,16 @@
+/*
+
+Program: AddCoinsMastery.java          Last Date of this Revision: November 3, 2024
+
+Purpose: Create a LunchOrder application that prompts the user for the number of hamburgers, salads, french 
+fries, and sodas and then displays the total for the order.
+
+Author: Amanda Ly
+School: CHHS
+Course: Computer Programming 20
+ 
+*/
+
 package Mastery;
 
 import java.util.Scanner;
@@ -19,7 +32,7 @@ public class TestLunchOrder {
 		LunchOrder friesInfo = new LunchOrder(1.3, 11, 36, 4);
 		LunchOrder sodaInfo = new LunchOrder(0.95, 0, 38, 0);
 		
-		//Prompt user to input an integer for each item and initialize it
+		//Prompt user to input an integer for each item and initialize it, display info about each item
 		System.out.print("Enter number of hamburgers: ");
 		burgerAmt = userInput.nextInt();
 		System.out.println(burgerInfo.burgers());

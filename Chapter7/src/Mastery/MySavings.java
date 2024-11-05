@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 public class MySavings {
 	private double total;
 	
+	//Shortens number to 2 decimal places
 	DecimalFormat df = new DecimalFormat("#0.00");
 	
 	//Constructor method with default values
@@ -27,24 +28,16 @@ public class MySavings {
 		total += t;
 	}
 	
-	//Add pennies
+	//Add coins
 	public void addPennies() {
 		total = total + 0.01;
-		
 	}
-	
-	//Add nickels
 	public void addNickels() {
 		total = total + 0.05;
-		
 	}
-	
-	//Add dimes
 	public void addDimes() {
 		total = total + 0.1;
 	}
-	
-	//Add quarters
 	public void addQuarters() {
 		total = total + 0.25;
 	}

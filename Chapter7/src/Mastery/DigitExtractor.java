@@ -1,7 +1,5 @@
 package Mastery;
 
-import java.text.DecimalFormat;
-
 public class DigitExtractor {
 	private int hundred, ten, one;
 	
@@ -59,7 +57,7 @@ public class DigitExtractor {
 		return ("The tens place digit is " + ten + ".");
 	}
 		
-	//Find tens place
+	//Find ones place
 	public String getOnes(int userNum) {
 		hundred = userNum / 100;
 		ten = (userNum - (hundred * 100)) / 10;

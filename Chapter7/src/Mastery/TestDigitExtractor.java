@@ -1,3 +1,16 @@
+/*
+
+Program: AddCoinsMastery.java          Last Date of this Revision: November 1, 2024
+
+Purpose: Create a DigitExtractor application that prompts the user for an integer and then displays the ones, 
+tens, and hundreds digit of the number
+
+Author: Amanda Ly
+School: CHHS
+Course: Computer Programming 20
+ 
+*/
+
 package Mastery;
 
 import java.util.Scanner;
@@ -9,7 +22,6 @@ public class TestDigitExtractor {
 		//Declaration area
 		int userNum; 
 		String option;
-		boolean quit;
 		
 		//Prepare for user input
 		Scanner userInput = new Scanner(System.in);
