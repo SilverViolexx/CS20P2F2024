@@ -17,11 +17,16 @@ public class CountLetters {
 		//Prepare for user input
 		Scanner userInput = new Scanner(System.in);
 		
+		//Prompt user
 		System.out.println("Please enter a phrase (Note that only letters are counted):");
 		phrase = userInput.next();
 		
+		phrase = phrase.replaceAll("\\s", "");
+		phrase = phrase.replaceAll("\\p{Punct}", "");
+		/////////////////////////System.out.print(phrase);
 		phrase = phrase.toUpperCase();
 		wordLetter = phrase.toCharArray();
+		
 		
 		for (int letter = 0; letter < wordLetter.length; letter++) {
 			offset = wordLetter[letter] - LOW; 
@@ -29,8 +34,9 @@ public class CountLetters {
 		}
 		
 		for (int i = LOW; i <= HIGH; i++) {
-			 System.out.println((char)i + ": " + letterCount[i - LOW]);
-			}
+			System.out.println((char)i + ": " + letterCount[i - LOW]);
+		}
+		
 		
 	}
 
