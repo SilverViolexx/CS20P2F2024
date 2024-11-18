@@ -19,11 +19,13 @@ public class CountLetters {
 		
 		//Prompt user
 		System.out.println("Please enter a phrase (Note that only letters are counted):");
-		phrase = userInput.next();
+		phrase = userInput.nextLine();
 		
-		phrase = phrase.replaceAll("\\s", "");
-		phrase = phrase.replaceAll("\\p{Punct}", "");
-		/////////////////////////System.out.print(phrase);
+		//Removing spaces and punctuation
+		phrase = phrase.replaceAll("\\W", "");
+		System.out.println(phrase);
+
+		//Separates characters
 		phrase = phrase.toUpperCase();
 		wordLetter = phrase.toCharArray();
 		

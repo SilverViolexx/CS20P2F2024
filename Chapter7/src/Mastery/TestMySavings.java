@@ -1,6 +1,6 @@
 /*
 
-Program: AddCoinsMastery.java          Last Date of this Revision: October 29, 2024
+Program: TestMySavings.java          Last Date of this Revision: October 29, 2024
 
 Purpose: Create a MySavings application that displays a menu of choices for entering pennies, nickels, dimes, and 
 quarters into a piggy bank and then prompts the user to make a selection

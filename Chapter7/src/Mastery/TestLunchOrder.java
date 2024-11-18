@@ -1,6 +1,6 @@
 /*
 
-Program: AddCoinsMastery.java          Last Date of this Revision: November 3, 2024
+Program: TestLunchOrder.java          Last Date of this Revision: November 3, 2024
 
 Purpose: Create a LunchOrder application that prompts the user for the number of hamburgers, salads, french 
 fries, and sodas and then displays the total for the order.
