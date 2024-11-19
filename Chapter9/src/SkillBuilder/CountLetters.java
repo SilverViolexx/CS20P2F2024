@@ -23,7 +23,6 @@ public class CountLetters {
 		
 		//Removing spaces and punctuation
 		phrase = phrase.replaceAll("\\W", "");
-		System.out.println(phrase);
 
 		//Separates characters
 		phrase = phrase.toUpperCase();

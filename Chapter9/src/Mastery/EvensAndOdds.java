@@ -24,10 +24,10 @@ public class EvensAndOdds {
 		ArrayList<Integer> evens = new ArrayList<Integer>();
 		ArrayList<Integer> odds = new ArrayList<Integer>();
 		
-		//Preparing to import random number and initialize it
+		//Preparing to import random number
 		Random r = new Random();
 		
-		
+		//Loops 25 times, adding each random number to either the odd or even array list
 		for (int count = 0; count < 25; count++) {
 		ranNum = r.nextInt(0,100);
 			if ((ranNum % 2) != 0) {
@@ -38,11 +38,13 @@ public class EvensAndOdds {
 			}
 		}
 		
+		//Display each element in odds array list
 		System.out.println("Odds:");
 		for (int element : odds) {
 			System.out.print(element + " ");
 		}
 		
+		//Display each element in evens array list
 		System.out.println("\nEvens:");
 		for (int element : evens) {
 			System.out.print(element + " ");
