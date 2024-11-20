@@ -1,5 +1,5 @@
 /*
-Program: EvensAndOdds.java          Last Date of this Revision: November 18, 2024
+Program: Palindrome.java          Last Date of this Revision: November 19, 2024
 
 Purpose: Create a Palindrome application that prompts the user for a string and then displays a message 
 indicating whether or not the string is a palindrome.
@@ -11,7 +11,6 @@ Course: Computer Programming 20
 */
 package Mastery;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Palindrome {
@@ -23,6 +22,7 @@ public class Palindrome {
 		int length, loop;
 		loop = 0;
 		char[] letters;
+		boolean isPalindrome = true;
 		
 		//Prepare for user input
 		Scanner userInput = new Scanner(System.in);
@@ -36,36 +36,41 @@ public class Palindrome {
 		
 		//Separates characters
 		phrase = phrase.toUpperCase();
-		System.out.println(phrase);
 		letters = phrase.toCharArray();
-		System.out.println(letters);
 		
 		//String length
-		length = letters.length -1;
+		length = letters.length - 1;
 		
-		//Loops until break condition
-		while (true) {
-			char first = letters[0];
-			char last = letters[length];
-			
+		//Loops until loop is greater than length or break condition
+		while (loop < length) {
 			//Compares characters
-			if (loop == length) {
-				System.out.print("This string is a palindrome.");
+			if (letters[loop] != letters[length]) {
+				isPalindrome = false;
 				break;
 			}
-			else if (first == last) {
-				loop ++;
-				length--;
-				continue;
-			}
-			else {
-				System.out.print("This string is not a palindrome.");
-				break;
-			}
-	
+			loop++;
+			length--;
+		}
+		
+		//Display answer
+		if (isPalindrome) {
+			System.out.print("This string is a palindrome.");
+		}
+		else {
+			System.out.print("This string is not a palindrome.");
 		}
 		
 		
 	}
 
 }
+
+/*
+Please enter a string:
+hello there
+This string is not a palindrome.
+
+Please enter a string:
+Never odd or even
+This string is a palindrome.
+*/
