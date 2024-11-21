@@ -1,5 +1,7 @@
 package Mastery;
 
+import java.util.Scanner;
+
 public class GradeBook {
 	private int[][] grades;
 	
@@ -9,43 +11,42 @@ public class GradeBook {
 		grades = new int[numStudents][numGrades];
 	}
 	
-	//Access method
+	//Inputs grades for each student
 	public void getGrades() 
 	{
-		//test number labels
-		for(int i=0; i < grades[0].length; i++)
-		{
-			System.out.println(i + 1);
-		}
-		System.out.println();
+		Scanner userInput = new Scanner(System.in);
+		System.out.println("Please enter 5 test scores for each student:");
 		
-		//Display student numbers and grades
 		for(int stu=0; stu < grades.length; stu++)
 		{
-			System.out.println( stu + 1);
+			System.out.println("Student " + (stu + 1) + ":");
+			for(int grd=0; grd < grades[0].length; grd++) 
+			{
+				grades[stu][grd] = userInput.nextInt();
+			}
+		}
+	}
+	
+	//Displays students and grades
+	public void showGrades() 
+	{
+		for(int stu=0; stu < grades.length; stu++)
+		{
+			System.out.print("\nStudent " + (stu + 1) + ": ");
 			for(int grd=0; grd < grades[0].length; grd++)
 			{
-				System.out.println( grades[stu][grd]);
+				if ((grd + 1) == grades[0].length) 
+				{
+					System.out.print(grades[stu][grd]);
+				}
+				else 
+				{
+					System.out.print(grades[stu][grd] + ", ");
+				}
 			}
 		}
 		System.out.println();
-		
 	}
-	
-	/*
-	//Modifier method
-	public void setGrades(int test,int score) {
-		grades = new int[test][score];
-	}
-	
-	//Inputs grade data
-	public int[][] getGrades(int input[][]) {
-		int[][] grades = ;
-		
-	}
-	*/
-	
-	
 	
 	//Student average
 	public double stuAvg(int stu)
@@ -59,8 +60,6 @@ public class GradeBook {
 		avg = (double)sum / grades[0].length;
 		
 		return avg;
-		
-		
 	}
 	
 	//Test average
@@ -68,7 +67,8 @@ public class GradeBook {
 	{
 		int sum = 0; 
 		double avg = 0;;
-		for (int stu = 0; stu < grades.length; stu++) {
+		for (int stu = 0; stu < grades.length; stu++) 
+		{
 			sum += grades[stu][grd -1];
 		}
 		avg = (double)sum / grades.length;

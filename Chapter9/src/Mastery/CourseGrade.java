@@ -11,43 +11,71 @@ Course: Computer Programming 20
 */
 package Mastery;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class CourseGrade {
+public class CourseGrade 
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
 		//Declaration area
-		int student, col, row, count;
-		int[][] grade = new int[12][5];
+		int student, test;
+		int[][] grade = new int[5][2];
 		student = 0;
 		
+		//Prepare for user input and shorten answer to 2 decimal places
+		Scanner userInput = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("#0.00");
+		
+		//New object
 		GradeBook grades = new GradeBook(grade[0].length, grade.length);
 		
-		/*
-		row = grades.length;
-		System.out.println(row);
-		col = grades[0].length;
-		System.out.println(col);
-		*/
-		
-		//Prepare for user input
-		Scanner userInput = new Scanner(System.in);
-		
-		//Prompt user
-		for (count = 0; count < 12; count++) {
-			student += 1;
-			System.out.println("Student " + student + " Grades:");
-			grade[count][0] = userInput.nextInt();
-			grade[count][1] = userInput.nextInt();
-			grade[count][2] = userInput.nextInt();
-			grade[count][3] = userInput.nextInt();
-			grade[count][4] = userInput.nextInt();
-		}
-		
+		//Prompts user to enter grades
 		grades.getGrades();
 		
+		//Displays grades of each student
+		grades.showGrades();
 		
+		//Loop until break condition
+		while (true) 
+		{
+			//Prompt user
+			System.out.print("\nWhich student would you like to see the average of?(Enter 0 to continue)"
+					+ "\nStudent: ");
+			student = userInput.nextInt();
+			
+			//Displays student average
+			if (student == 0) 
+			{
+				break;
+			}
+			else 
+			{
+				System.out.println("Their average is " + df.format(grades.stuAvg(student)));
+			}
+		}
+		
+		//Loop until break condition
+		while (true) 
+		{
+			//Prompt user
+			System.out.print("\nWhich test would you like to see the average of?(Enter 0 to quit)"
+					+ "\nTest: ");
+			test = userInput.nextInt();
+			
+			//Displays test average
+			if (test == 0) 
+			{
+				break;
+			}
+			else 
+			{
+				System.out.println("The test average is " + df.format(grades.testAvg(test)));
+			}
+		}
+
 	}
 
 }
