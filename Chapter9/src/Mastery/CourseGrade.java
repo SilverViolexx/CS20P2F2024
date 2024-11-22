@@ -22,7 +22,7 @@ public class CourseGrade
 		// TODO Auto-generated method stub
 		//Declaration area
 		int student, test;
-		int[][] grade = new int[5][2];
+		int[][] grade = new int[5][12];
 		student = 0;
 		
 		//Prepare for user input and shorten answer to 2 decimal places

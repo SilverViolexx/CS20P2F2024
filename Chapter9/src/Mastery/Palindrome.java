@@ -19,8 +19,7 @@ public class Palindrome {
 		// TODO Auto-generated method stub
 		//Declaration area
 		String phrase;
-		int length, loop;
-		loop = 0;
+		int length;
 		char[] letters;
 		boolean isPalindrome = true;
 		
@@ -41,14 +40,13 @@ public class Palindrome {
 		//String length
 		length = letters.length - 1;
 		
-		//Loops until loop is greater than length or break condition
-		while (loop < length) {
+		//Loops until counter is greater than length
+		for (int i = 0; i < length; i++) {
 			//Compares characters
-			if (letters[loop] != letters[length]) {
+			if (letters[i] != letters[length]) {
 				isPalindrome = false;
 				break;
 			}
-			loop++;
 			length--;
 		}
 		
