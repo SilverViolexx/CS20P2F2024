@@ -22,7 +22,7 @@ public class CourseGrade
 		// TODO Auto-generated method stub
 		//Declaration area
 		int student, test;
-		int[][] grade = new int[5][12];
+		int[][] grade = new int[5][2];
 		student = 0;
 		
 		//Prepare for user input and shorten answer to 2 decimal places
@@ -79,3 +79,72 @@ public class CourseGrade
 	}
 
 }
+
+/*
+Please enter 5 test scores for each student:
+Student 1:
+25
+50
+50
+50
+80
+Student 2:
+25
+25
+50
+80
+100
+
+Student 1: 25, 50, 50, 50, 80
+Student 2: 25, 25, 50, 80, 100
+
+Which student would you like to see the average of?(Enter 0 to continue)
+Student: 1
+Their average is 51.00
+
+Which student would you like to see the average of?(Enter 0 to continue)
+Student: 0
+
+Which test would you like to see the average of?(Enter 0 to quit)
+Test: 4
+The test average is 65.00
+
+Which test would you like to see the average of?(Enter 0 to quit)
+Test: 0
+
+
+
+Please enter 5 test scores for each student:
+Student 1:
+100
+100
+75
+80
+50
+Student 2:
+100
+50
+50
+60
+25
+
+Student 1: 100, 100, 75, 80, 50
+Student 2: 100, 50, 50, 60, 25
+
+Which student would you like to see the average of?(Enter 0 to continue)
+Student: 2
+Their average is 57.00
+
+Which student would you like to see the average of?(Enter 0 to continue)
+Student: 0
+
+Which test would you like to see the average of?(Enter 0 to quit)
+Test: 5
+The test average is 37.50
+
+Which test would you like to see the average of?(Enter 0 to quit)
+Test: 0
+
+
+
+*/

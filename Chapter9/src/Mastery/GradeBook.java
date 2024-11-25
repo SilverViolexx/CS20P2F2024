@@ -1,3 +1,14 @@
+/*
+Program: GradeBook.java          Last Date of this Revision: November 20, 2024
+
+Purpose: Create a CourseGrades application that simulates a grade book for a class with 12 students that each have 
+5 test scores.
+
+Author: Amanda Ly
+School: CHHS
+Course: Computer Programming 20
+ 
+*/
 package Mastery;
 
 import java.util.Scanner;
