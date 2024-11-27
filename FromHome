@@ -114,5 +114,434 @@ public class HotOrCold {
 	}
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+package AdvancedLessons;
 
+//Add Phidgets Library
+import com.phidget22.*;
 
+public class AttachEvents {
+	//Turn on/off LEDs with Global Variables
+	  static boolean turnRedLEDOn = false;
+	  static boolean turnGreenLEDOn = false;
+	  
+  public static void main(String[] args) throws Exception {
+     
+       //Create
+      TemperatureSensor temperatureSensor = new TemperatureSensor();
+      DigitalInput redButton = new DigitalInput();
+      DigitalInput greenButton = new DigitalInput();
+      DigitalOutput redLED = new DigitalOutput();
+      DigitalOutput greenLED = new DigitalOutput();
+
+      //Address
+      redButton.setHubPort(0);
+      redButton.setIsHubPortDevice(true);
+      greenButton.setHubPort(5);
+      greenButton.setIsHubPortDevice(true);
+      redLED.setHubPort(1);
+      redLED.setIsHubPortDevice(true);
+      greenLED.setHubPort(4);
+      greenLED.setIsHubPortDevice(true);
+
+      //Data Event | Event code runs when data from sensor changes. 
+      temperatureSensor.addTemperatureChangeListener(new TemperatureSensorTemperatureChangeListener() {
+          public void onTemperatureChange(TemperatureSensorTemperatureChangeEvent e) {
+              //Print temperature
+              System.out.println("Temperature: " + e.getTemperature() + "°C");
+          }
+      });
+
+      /*
+      //Attach Event | Attach Events run when a Phidget is connected to the Object
+      temperatureSensor.addAttachListener(new AttachListener() {
+          public void onAttach(AttachEvent e) {
+              System.out.println("Attach!");
+          }
+      });
+
+      //Detach Event | Detach Events run when a Phidget is disconnected from the Object
+      temperatureSensor.addDetachListener(new DetachListener() {
+          public void onDetach(DetachEvent e) {
+              System.out.println("Detach!");
+          }
+      });
+      */
+      
+      //Event | Event code runs when data input from the sensor changes. The following event is a state change event. The code will listen to the button (Digital Input Object) and only run the contain code when the button is pressed or released (state changes).
+      redButton.addStateChangeListener(new DigitalInputStateChangeListener() {
+          public void onStateChange(DigitalInputStateChangeEvent e) {
+              //Record button state to turn on/off the red LED
+              turnRedLEDOn = e.getState();  
+          }
+      });
+
+      //Event | Event code runs when data input from the sensor changes. The following event is a state change event. It will listen to the button (Digital Input Object) and only run the contain code when the button is pressed or released (state changes).
+      greenButton.addStateChangeListener(new DigitalInputStateChangeListener() {
+          public void onStateChange(DigitalInputStateChangeEvent e) {
+              //Record button state to turn on/off the green LED
+        	  turnGreenLEDOn = e.getState();
+          }
+      });
+      
+      
+      //Attach Event | Attach Events run when a Phidget is connected to the Object
+      redButton.addAttachListener(new AttachListener() {
+          public void onAttach(AttachEvent e) {
+              //System.out.println("Attach!");
+          }
+      });
+    //Detach Event | Detach Events run when a Phidget is disconnected from the Object
+      temperatureSensor.addDetachListener(new DetachListener() {
+          public void onDetach(DetachEvent e) {
+              //System.out.println("Detach!");
+          }
+      });
+
+      //Open
+      //temperatureSensor.open(1000);
+      redButton.open(1000);
+      greenButton.open(1000);
+      redLED.open(1000);
+      greenLED.open(1000);
+
+      //Keep program running
+      while (true) {
+    	  redLED.setState(turnRedLEDOn);
+    	  System.out.println("Red button detached!");
+    	  while (true)
+    	  {
+    		  
+    		  if (redButton.getState() == true)
+    		  {
+    			  System.out.println("Attach!");
+    			  Thread.sleep(1500);
+    			  break;
+    		  }
+    		  else
+    		  {
+    			  System.out.println("Detach!");
+    		  }
+    		  Thread.sleep(250);
+    	  }
+    	  greenLED.setState(turnGreenLEDOn);
+    	  System.out.println("Green button detached!");
+    	  while (true)
+    	  {
+    		  if (greenButton.getState() == true)
+    		  {
+    			  System.out.println("Attach!");
+    			  break;
+    		  }
+    		  else
+    		  {
+    			  System.out.println("Detach!");
+    		  }
+    		  Thread.sleep(250);
+    	  }
+          Thread.sleep(250);
+          break;
+      }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+package AdvancedLessons;
+
+//Add Phidgets Library
+import com.phidget22.*;
+
+public class ButtonEvents {
+	//Handle Exceptions
+	public static void main(String[] args) throws Exception {
+	       
+		//Create
+		DigitalInput redButton = new DigitalInput();
+		DigitalInput greenButton = new DigitalInput();
+
+		//Address
+		redButton.setIsHubPortDevice(true);
+		redButton.setHubPort(0);
+		greenButton.setIsHubPortDevice(true);
+		greenButton.setHubPort(5);
+
+		
+		//Event | Event code runs when data input from the sensor changes. The following event is a state change event. The code will listen to the button (Digital Input Object) and only run the contain code when the button is pressed or released (state changes).
+		redButton.addStateChangeListener(new DigitalInputStateChangeListener() {
+			public void onStateChange(DigitalInputStateChangeEvent e) {
+				if (e.getState() == true)
+				{
+					System.out.println("State: " + e.getState());
+				}
+			}
+		});
+		
+		greenButton.addStateChangeListener(new DigitalInputStateChangeListener() {
+			public void onStateChange(DigitalInputStateChangeEvent f) {
+				if (f.getState() == true)
+				{
+					System.out.println("State: " + f.getState());
+				}
+			}
+		});
+
+		//Open
+		redButton.open(1000);
+		greenButton.open(1000);
+
+		//Keep program running
+		while (true) {
+			Thread.sleep(1500);
+		}
+	}
+}
+	  
+//////////////////////////////////////////////////////////////////////////////////////////
+
+package AdvancedLessons;
+
+//Add Phidgets Library
+	import com.phidget22.*;
+
+public class ClosingPhigets 
+{
+	public static void main(String[] args) throws Exception
+	{
+
+		//Create
+		TemperatureSensor temperatureSensor = new TemperatureSensor();
+
+		//Open
+		temperatureSensor.open(1000);
+
+		//Use your Phidgets
+		System.out.println("Temperature: " + temperatureSensor.getTemperature() + " °C" );
+	        
+		//Close your Phidgets
+		temperatureSensor.close();
+		temperatureSensor.open(1000);
+		System.out.println("Temperature: " + temperatureSensor.getTemperature() + " °C" );
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////
+package AdvancedLessons;
+
+//Add Phidgets Library
+import com.phidget22.*;
+
+public class DataInterval {
+  //Handle Exceptions
+  public static void main(String[] args) throws Exception {
+
+      //Create
+      TemperatureSensor temperatureSensor = new TemperatureSensor();
+
+      //Temperature Event |  Event code runs when data input from the sensor changes. The following event is a Temperature change event. The contained code will only run when the temperature input changes.
+      temperatureSensor.addTemperatureChangeListener(new TemperatureSensorTemperatureChangeListener() {
+          public void onTemperatureChange(TemperatureSensorTemperatureChangeEvent e) {
+              System.out.println("Temperature: " + e.getTemperature());
+          }
+      });
+
+      //Open
+      temperatureSensor.open(5000);
+
+      //Set Data Interval | The Data Interval controls how often the program collects data from your Phidget. The Data Interval ranges from 500 ms - 60000 ms.
+      temperatureSensor.setDataInterval(60000);
+
+      //Keep program running
+      while (true) {
+          Thread.sleep(150);
+      }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+package AdvancedLessons;
+
+//Add Phidgets Library 
+import com.phidget22.*;
+
+public class LEDBrightness 
+{
+	//Handle Exceptions 
+	public static void main(String[] args) throws Exception
+	{
+
+		//Create 
+		DigitalOutput redLED = new DigitalOutput();
+
+		//Address 
+		redLED.setHubPort(1);
+		redLED.setIsHubPortDevice(true);
+
+		//Open 
+		redLED.open(1000);
+
+		//Use your Phidgets with Duty Cycle | Duty Cycle controls the power to your Phidget (Digital Output object). Duty Cycle values range from 0.0 - 1.0.
+		for (double i = 0; i <= 1; i += 0.1)
+		{
+			redLED.setDutyCycle(i);
+			Thread.sleep(1000);
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+package AdvancedLessons;
+
+//Add Phidgets Library
+import com.phidget22.*;
+
+public class LEDEvents {
+  //Turn on/off LEDs with Global Variables
+  static boolean turnRedLEDOn = false;
+  static boolean turnGreenLEDOn = false;
+
+  //Handle Exceptions
+  public static void main(String[] args) throws Exception {
+	  
+	  int redCount = 0;
+	  int greenCount = 0;
+	  
+      //Create
+      DigitalInput redButton = new DigitalInput();
+      DigitalInput greenButton = new DigitalInput();
+      DigitalOutput redLED = new DigitalOutput();
+      DigitalOutput greenLED = new DigitalOutput();
+
+      //Address
+      redButton.setHubPort(0);
+      redButton.setIsHubPortDevice(true);
+      greenButton.setHubPort(5);
+      greenButton.setIsHubPortDevice(true);
+      redLED.setHubPort(1);
+      redLED.setIsHubPortDevice(true);
+      greenLED.setHubPort(4);
+      greenLED.setIsHubPortDevice(true);
+
+      //Event | Event code runs when data input from the sensor changes. The following event is a state change event. The code will listen to the button (Digital Input Object) and only run the contain code when the button is pressed or released (state changes).
+      redButton.addStateChangeListener(new DigitalInputStateChangeListener() {
+          public void onStateChange(DigitalInputStateChangeEvent e) {
+              //Record button state to turn on/off the red LED
+              turnRedLEDOn = e.getState();  
+          }
+      });
+
+      //Event | Event code runs when data input from the sensor changes. The following event is a state change event. It will listen to the button (Digital Input Object) and only run the contain code when the button is pressed or released (state changes).
+      greenButton.addStateChangeListener(new DigitalInputStateChangeListener() {
+          public void onStateChange(DigitalInputStateChangeEvent e) {
+              //Record button state to turn on/off the green LED
+        	  turnGreenLEDOn = e.getState();
+          }
+      });
+
+      //Open
+      redLED.open(1000);
+      greenLED.open(1000);
+      redButton.open(1000);
+      greenButton.open(1000);
+
+      //Use your Phidgets | In the button events you recorded the Button State. Here we will use that data to turn on/off the LEDs
+      while(true) {
+    	  //turn red LED on based on red button input
+    	  redLED.setState(turnGreenLEDOn);
+    	  if (redButton.getState() == true) 
+    	  {
+    		  redCount ++;
+    		  System.out.println("Red Count:" + redCount);
+    	  }
+          //turn green LED on based on green button input
+          greenLED.setState(turnRedLEDOn);
+          if (greenButton.getState() == true) 
+    	  {
+    		  greenCount ++;
+    		  System.out.println("Green Count:" + greenCount);
+    	  }
+          //sleep for 150 milliseconds 
+          Thread.sleep(200);
+      }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+package AdvancedLessons;
+
+//Add Phidgets Library
+import com.phidget22.*;
+
+public class SmartPhigetEvent {
+
+  public static void main(String[] args) throws Exception {
+      
+      //Create
+      HumiditySensor humiditySensor = new HumiditySensor();
+      TemperatureSensor temperatureSensor = new TemperatureSensor();
+
+      //Humidity Event |  Event code runs when data input from the sensor changes. The following event is a Humidity change event. The contained code will only run when the humidity input changes.
+      humiditySensor.addHumidityChangeListener(new HumiditySensorHumidityChangeListener() {
+          public void onHumidityChange(HumiditySensorHumidityChangeEvent e) {
+             // System.out.println("Humidity: " + e.getHumidity() + "%RH");
+          }
+      });
+      
+      //Temperature Event |  Event code runs when data input from the sensor changes. The following event is a Temperature change event. The contained code will only run when the temperature input changes.
+      temperatureSensor.addTemperatureChangeListener(new TemperatureSensorTemperatureChangeListener() {
+          public void onTemperatureChange(TemperatureSensorTemperatureChangeEvent e) {
+              //System.out.println("Temperature: " + e.getTemperature() + "°C");
+          }
+      });
+
+      //Open
+      humiditySensor.open(1000);
+      temperatureSensor.open(1000);
+
+     
+      //Keep program running
+      while (true) {
+    	  if (temperatureSensor.getTemperature() > 21)
+          {
+    		  System.out.println("Temperature: " + temperatureSensor.getTemperature() + "°C");
+          }
+    	  else if (temperatureSensor.getTemperature() < 21)
+    	  {
+    		  System.out.println("Room is too cold");
+    	  }
+          Thread.sleep(1500);
+      }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package AdvancedLessons;
+
+//Add Phidgets Library 
+import com.phidget22.*;
+
+public class TwoSmartPhigets {
+  public static void main(String[] args) throws Exception{
+
+      //Create 
+      TemperatureSensor temperatureSensor0 = new TemperatureSensor();
+      TemperatureSensor temperatureSensor1 = new TemperatureSensor();
+
+       //Address | Smart Phidgets must be addressed when you are using more than one of the same software objects in your program. Setting the HubPort allows you to keep track of which physical Phidget is paired with each software object. If you do not address the objects, your program will have unpredictable results.
+       temperatureSensor0.setHubPort(3);
+       temperatureSensor1.setHubPort(2);
+
+      //Open 
+      temperatureSensor0.open(1000);
+      temperatureSensor1.open(1000);
+
+      //Use your Phidgets 
+      while (true) {
+          System.out.println("Temperature 0: " + temperatureSensor0.getTemperature() + " °C" );
+          System.out.println("Temperature 1: " + temperatureSensor1.getTemperature() + " °C" );
+          Thread.sleep(150);
+      }
+  }
+}
