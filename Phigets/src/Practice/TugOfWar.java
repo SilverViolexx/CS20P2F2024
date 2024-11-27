@@ -45,27 +45,29 @@ public class TugOfWar
 		//Display player info
 		System.out.println("Player 1 is red, Player 2 is green");
 		
+		//Countdown to start using for loop
+		for (int i = 3; i > 0; i--)
+		{
+			System.out.println(i);
+			Thread.sleep(1000);
+			if (i == 1)
+			{
+				System.out.println("Start!");
+				
+			}
+		}
+		
 		//While loop that checks button state until one of the buttons is pressed 10 times
 		while (redCount < 10 && greenCount < 10){
 
 			if(redButton.getState())
-			{
-				redLED.setState(true);
+			{	
 				redCount++;
 			} 
-			else {
-				redLED.setState(false);
-			}
-
-			if(greenButton.getState())
+			else if(greenButton.getState())
 			{
-				greenLED.setState(true);
 				greenCount++;
 			} 
-			else 
-			{
-				greenLED.setState(false);
-			}
 
 			Thread.sleep(75);
 		}
@@ -103,10 +105,8 @@ public class TugOfWar
 			    Thread.sleep(800);
 			}
 		}
-		
-		    
+ 
 	}
-
 }	  
 
 

@@ -17,7 +17,6 @@ public class HotOrCold
 
 	public static void main(String[] args) throws Exception 
 	{
-	
 	    //Create a temperature sensor object
 		TemperatureSensor temperatureSensor = new TemperatureSensor();
 	      
