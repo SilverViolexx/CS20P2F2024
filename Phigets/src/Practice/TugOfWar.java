@@ -64,7 +64,7 @@ public class TugOfWar
 			{	
 				redCount++;
 			} 
-			else if(greenButton.getState())
+			if(greenButton.getState())
 			{
 				greenCount++;
 			} 
@@ -108,6 +108,3 @@ public class TugOfWar
  
 	}
 }	  
-
-
-

@@ -16,6 +16,7 @@ public class BuildAThermostat
 {
 	//Global variable
 	public static int temperature = 21;
+	
 	public static void main(String[] args) throws Exception 
 	{
 		//Create objects for red and green buttons
