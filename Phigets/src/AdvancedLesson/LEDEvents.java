@@ -56,18 +56,20 @@ public class LEDEvents {
       while(true) {
     	  //turn red LED on based on red button input
     	  redLED.setState(turnGreenLEDOn);
-    	  if (redButton.getState() == true) 
+    	  /*if (redButton.getState() == true) 
     	  {
     		  redCount ++;
     		  System.out.println("Red Count:" + redCount);
     	  }
+    	  */
           //turn green LED on based on green button input
           greenLED.setState(turnRedLEDOn);
-          if (greenButton.getState() == true) 
+          /*if (greenButton.getState() == true) 
     	  {
     		  greenCount ++;
     		  System.out.println("Green Count:" + greenCount);
     	  }
+    	  */
           //sleep for 150 milliseconds 
           Thread.sleep(200);
       }
