@@ -73,8 +73,7 @@ public class AdvancedLessons
 		{
 			public void onStateChange(DigitalInputStateChangeEvent e) 
 			{  
-				greenChange = e.getState();
-				
+				greenChange = e.getState();		
 			}
 		});
 
@@ -114,23 +113,18 @@ public class AdvancedLessons
 				}
 				Thread.sleep(500);
             
-				//Runs when health reaches 0
+				//Runs when health reaches 0, breaks loop
 				if (health == 0)
 				{
-					System.out.println("\nThe cat has attacked you."
+					System.out.println("\nThe cat has attacked you. "
 							+ "\nSpam the red button to get it off.");
 					break;
-				
-					
-					
-      		  
 				}
 			}
   	  
 			//Runs when green button pressed
 			if (greenButton.getState())
 			{
-				
 				health++;
       	  
 				//Display message
@@ -179,7 +173,7 @@ public class AdvancedLessons
 			 */
   	  
 			//Warning for overheating
-			if (temperatureSensor.getTemperature() >= 29) 
+			if (temperatureSensor.getTemperature() >= 30) 
 			{
 				//Displays warning once
 				if (warning1 < 1)
@@ -192,7 +186,6 @@ public class AdvancedLessons
 				}
 				warning1++;
 			}
-  	  
 			if (temperatureSensor.getTemperature() >= 35) 
 			{
 				//Displays warning once
@@ -216,31 +209,37 @@ public class AdvancedLessons
 				redLED.setState(false);
 				break;
     		}
-    	
+
 		}
-		while (health == 0) 
+		
+		//Loops when health reaches 0 and when the count is less than 10
+		while (health == 0 && redCount < 10) 
 		{
 			redLED.setState(redChange);
-			
-			redCount++;
-			if (redCount != 10) 
+			if(redButton.getState())
+			{	
+				redCount++;
+			} 
+			Thread.sleep(75);
+		}
+		
+		//If the red button count reaches 10
+		if (redCount == 10) 
+		{
+			//Display message
+			System.out.print("\nYou have killed the cat.☠️");
+			//Flashes red LED 3 times
+			for (int i = 0; i < 3; i++)
 			{
-				//Display message
-				System.out.print("\nYou have killed the cat.☠️");
-				//Flashes red LED 3 times
-				for (int i = 0; i < 3; i++)
-				{
-					redLED.setState(true);
-					Thread.sleep(800);
-					redLED.setState(false);
-					Thread.sleep(800);
-  			  
-				}
-				break;
-				}
+				redLED.setState(true);
+				Thread.sleep(800);
+				redLED.setState(false);
+				Thread.sleep(800);
+			}
+		}
 			
-		} 
-    
+		
+		//Close phigets
 		temperatureSensor.close();
 		redButton.close();
 		redLED.close();

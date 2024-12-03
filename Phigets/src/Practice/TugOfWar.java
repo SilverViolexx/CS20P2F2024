@@ -90,6 +90,7 @@ public class TugOfWar
 				redLED.setState(true);
 			    Thread.sleep(800);
 			    redLED.setState(false);
+			    Thread.sleep(800);
 			}
 		}
 		else 
@@ -101,6 +102,7 @@ public class TugOfWar
 				greenLED.setState(true);
 			    Thread.sleep(800);
 			    greenLED.setState(false);
+			    Thread.sleep(800);
 			}
 		}
  
